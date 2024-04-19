@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    private array $bindingInterfaces = [
+    private  $bindingInterfaces = [
         \Vocces\Company\Domain\CompanyRepositoryInterface::class =>
             \Vocces\Company\Infrastructure\CompanyRepositoryEloquent::class,
     ];
