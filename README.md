@@ -10,14 +10,14 @@
 
 #### REQUISISTOS
 
- - PHP 7.3
+ - PHP 7.3 | 8 (Según pone en el archivo .json)
  - Mysql o MariaDB
 
 ----
 
 #### EJERCICIOS
 
- - Agregar las propiedades `email` y `address` a las compañías.
+ - Agregar las propiedades `email` y `address` a las compañías. :+1:
  - Crear un nuevo caso de uso para actualizar el estado de una compañía de `inactive` a `active`.
  - Crear un nuevo endpoint de API que actualice el estado usando el caso de uso del punto anterior.
  - Crear nuevo caso de uso que liste todas las compañías.
