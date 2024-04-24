@@ -16,4 +16,8 @@ class CompanyRepositoryFake implements CompanyRepositoryInterface
     {
         $this->callMethodCreate = true;
     }
+    public function changeStatus(Company $company): void
+    {
+        $this->callMethodCreate = true;
+    }
 }
