@@ -21,4 +21,8 @@ class CompanyRepositoryEloquent implements CompanyRepositoryInterface
             'status' => $company->status(),
         ]);
     }
+    public function changeStatus(Company $company): void
+    {
+        $company->status()->enabled();
+    }
 }

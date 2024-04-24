@@ -2,6 +2,8 @@
 
 namespace Vocces\Company\Domain;
 
+use Vocces\Company\Domain\ValueObject\CompanyStatus;
+
 interface CompanyRepositoryInterface
 {
     /**
@@ -12,4 +14,5 @@ interface CompanyRepositoryInterface
      * @return void
      */
     public function create(Company $company): void;
+    public function changeStatus(Company $company): void;
 }
