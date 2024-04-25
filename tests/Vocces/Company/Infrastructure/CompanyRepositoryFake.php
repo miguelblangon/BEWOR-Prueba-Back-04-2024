@@ -2,6 +2,7 @@
 
 namespace Tests\Vocces\Company\Infrastructure;
 
+use App\Models\Company as ModelsCompany;
 use Vocces\Company\Domain\Company;
 use Vocces\Company\Domain\CompanyRepositoryInterface;
 
@@ -16,7 +17,7 @@ class CompanyRepositoryFake implements CompanyRepositoryInterface
     {
         $this->callMethodCreate = true;
     }
-    public function changeStatus(Company $company): void
+    public function changeStatus(ModelsCompany $company, string $companyStatus): void
     {
         $this->callMethodCreate = true;
     }

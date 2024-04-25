@@ -18,11 +18,13 @@ class CompanyRepositoryEloquent implements CompanyRepositoryInterface
             'name'   => $company->name(),
             'email'   => $company->email(),
             'address'   => $company->address(),
-            'status' => $company->status(),
+            'status' => $company->status()->name(),
         ]);
     }
-    public function changeStatus(Company $company): void
+    public function changeStatus(ModelsCompany $company, string $companyStatus ): void
     {
-        $company->status()->enabled();
+
+        $company->status = $companyStatus;
+        $company->save();
     }
 }
