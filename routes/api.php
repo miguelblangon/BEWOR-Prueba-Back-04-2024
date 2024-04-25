@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/company', [App\Http\Controllers\Api\Company\PostCreateCompanyController::class, '__invoke']);
+Route::patch('/company/{company}', [App\Http\Controllers\Api\Company\PathUpdateStatusCompanyController::class, '__invoke']);
