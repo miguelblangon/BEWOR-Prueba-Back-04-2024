@@ -54,6 +54,17 @@ final class Company implements Arrayable
         $this->address = $address;
         $this->status = $status;
     }
+    public static function fromDataArray(array $array) :Company {
+       $status = CompanyStatus::fromName($array['status']);
+        $new = new Company(
+            new CompanyId($array['id']),
+            new CompanyName($array['name']),
+            new CompanyEmail($array['email']),
+            new CompanyAddress($array['address']),
+            new CompanyStatus($status->code())
+        );
+        return $new;
+    }
 
     public function id(): CompanyId
     {
@@ -76,6 +87,10 @@ final class Company implements Arrayable
     public function status(): CompanyStatus
     {
         return $this->status;
+    }
+    public function setStatus(int $status): void
+    {
+        $this->status=new CompanyStatus($status);
     }
 
     public function toArray()

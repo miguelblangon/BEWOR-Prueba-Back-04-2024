@@ -6,9 +6,10 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Company as ModelsCompany;
 use Vocces\Company\Application\CompanyUpdateStatus;
+use Vocces\Company\Domain\Company;
 use Vocces\Company\Domain\ValueObject\CompanyStatus;
 
-class PathUpdateStatusCompanyController extends Controller
+class PatchUpdateStatusCompanyController extends Controller
 {
     /**
      * Update company
@@ -20,8 +21,8 @@ class PathUpdateStatusCompanyController extends Controller
     {
         DB::beginTransaction();
         try {
-            $companyStatus= new CompanyStatus(1);
-            $return = $service->handle($company, $companyStatus->name());
+            $compa =   Company::fromDataArray($company->toArray());
+            $return = $service->handle($compa, CompanyStatus::ENABLED);
             DB::commit();
             return response($return->toArray(),201);
         } catch (\Throwable $error) {
