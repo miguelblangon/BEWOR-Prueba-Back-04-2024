@@ -21,10 +21,9 @@ class CompanyRepositoryEloquent implements CompanyRepositoryInterface
             'status' => $company->status()->name(),
         ]);
     }
-    public function changeStatus(ModelsCompany $company, string $companyStatus ): void
+    public function changeStatus(Company $company, int $companyStatus ): void
     {
-
-        $company->status = $companyStatus;
-        $company->save();
+        $company->setStatus($companyStatus);
+        ModelsCompany::find($company->id())->update(['status'=>$company->status()->name()]);
     }
 }

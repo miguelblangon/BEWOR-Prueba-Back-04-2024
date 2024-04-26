@@ -19,20 +19,11 @@ class UpdateStatusCompanyRouteTest extends TestCase
         /**
          * Preparing
          */
-        $faker = \Faker\Factory::create();
-        $testCompany = [
-            'id'     => Str::uuid(),
-            'name'   => $faker->name,
-            'email'   => $faker->email,
-            'address'   => $faker->address,
-            'status'   => 'inactive'
-        ];
-        $company= Company::create($testCompany);
+        $company= Company::first();
         /**
          * Actions
          */
-        $response = $this->json('PATCH', '/api/company/'.$company->id->toString());
-        //dd($response);
+        $response = $this->json('PATCH', '/api/company/'.$company->id);
         /**
          * Asserts
          */

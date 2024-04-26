@@ -1,7 +1,8 @@
 <?php
 
 namespace Vocces\Company\Application;
-use App\Models\Company as ModelsCompany;
+
+use Vocces\Company\Domain\Company;
 use Vocces\Company\Domain\CompanyRepositoryInterface;
 use Vocces\Shared\Domain\Interfaces\ServiceInterface;
 
@@ -23,7 +24,7 @@ class CompanyUpdateStatus implements ServiceInterface
     /**
      * Update a status the 'inactive' to 'active'
      */
-    public function handle(ModelsCompany $company,string $companiStatus )
+    public function handle(Company $company,int $companiStatus )
     {
          $this->repository->changeStatus($company,$companiStatus);
         return $company;
