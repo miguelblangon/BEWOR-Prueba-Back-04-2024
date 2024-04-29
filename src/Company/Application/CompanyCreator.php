@@ -2,7 +2,6 @@
 
 namespace Vocces\Company\Application;
 
-use App\Models\Company as ModelsCompany;
 use Vocces\Company\Domain\Company;
 use Vocces\Company\Domain\ValueObject\CompanyId;
 use Vocces\Company\Domain\ValueObject\CompanyName;
