@@ -20,4 +20,9 @@ class CompanyRepositoryFake implements CompanyRepositoryInterface
     {
         $this->callMethodCreate = true;
     }
+    public function listAll($list): string{
+        return '';
+    }
+
+
 }

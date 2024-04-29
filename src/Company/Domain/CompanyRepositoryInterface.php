@@ -12,4 +12,5 @@ interface CompanyRepositoryInterface
      */
     public function create(Company $company): void;
     public function changeStatus(Company $company, int $companyStatus): void;
+    public function listAll(array $list): string;
 }

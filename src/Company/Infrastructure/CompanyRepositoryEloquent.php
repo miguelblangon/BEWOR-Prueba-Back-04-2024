@@ -26,4 +26,9 @@ class CompanyRepositoryEloquent implements CompanyRepositoryInterface
         $company->setStatus($companyStatus);
         ModelsCompany::find($company->id())->update(['status'=>$company->status()->name()]);
     }
+    public function listAll($list): string{
+            return json_encode($list);
+    }
+
+
 }
