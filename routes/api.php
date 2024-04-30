@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::get('/company', [App\Http\Controllers\Api\Company\GetListAllCompaniesController::class, '__invoke']);
 Route::post('/company', [App\Http\Controllers\Api\Company\PostCreateCompanyController::class, '__invoke']);
 Route::patch('/company/{company}', [App\Http\Controllers\Api\Company\PatchUpdateStatusCompanyController::class, '__invoke']);
